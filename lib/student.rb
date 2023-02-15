@@ -15,4 +15,5 @@ class Student
   def grade
     @scores.sum.to_f / @scores.count.to_f
   end
+
 end
