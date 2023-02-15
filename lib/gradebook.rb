@@ -28,6 +28,15 @@ class Gradebook
   end
 
   def all_grades
+    grades_hash = Hash.new
+    @courses.each do |course|
+      grades_array = Array.new
+      course.students.each do |student|
+        grades_array << student.grade.to_f
+      end
+      grades_hash[course] = grades_array
+    end
+    grades_hash
   end
 
   def students_in_range(low, high)
